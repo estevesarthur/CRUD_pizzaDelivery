@@ -2,47 +2,50 @@ package com.ihc.pizzariadelivery.model;
 
 import java.time.LocalDateTime;
 import javax.persistence.*;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "tb_pedido")
 public class Pedido {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name="ID")
   private long id;
 
-  @Size(max=5)
+  @Column(name = "PedidoNumero", nullable = false, length = 5)
   private String pedidoNumero;
 
-  @Size(max = 100)
+  @Column(name = "Nome", nullable = false, length = 120)
   private String nome;
 
-  @Size(max = 20)
+  @Column(name = "Bairro", nullable = false, length = 12)
   private String bairro;
 
-  @Size(max = 10)
+  @Column(name = "Cep", nullable = false, length = 9)
   private String cep;
 
-  @Size(max = 40)
+  @Column(name = "Rua", nullable = false, length = 20)
   private String rua;
 
-  @Size(max = 6)
+  @Column(name = "Numero", nullable = false, length = 4)
   private String numero;
 
-  @Size(max = 30)
+  @Column(name = "Complemento", nullable = false, length = 30)
   private String complemento;
 
-  @Size(max = 30)
+  @Column(name = "Observacoes", nullable = false, length = 30)
   private String observacoes;
 
-  @Size(max = 12)
+  @Column(name = "Celular", nullable = false, length = 12)
   private String celular;
 
+  @Column(name = "Pagamento", nullable = false)
   private String pagamento;
 
+  @Column(name = "TotalPrice", nullable = false)
   private String totalPrice;
 
+  @Column(name = "DataHora", nullable = false)
   private LocalDateTime dataHora;
 
   public long getId() {
