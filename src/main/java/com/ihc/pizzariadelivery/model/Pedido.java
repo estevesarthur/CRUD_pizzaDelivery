@@ -30,22 +30,19 @@ public class Pedido {
   @Column(name = "Numero", nullable = false, length = 4)
   private String numero;
 
-  @Column(name = "Complemento", nullable = false, length = 30)
+  @Column(name = "Complemento", nullable = true, length = 30)
   private String complemento;
 
-  @Column(name = "Observacoes", nullable = false, length = 30)
+  @Column(name = "Observacoes", nullable = true, length = 30)
   private String observacoes;
 
-  @Column(name = "Celular", nullable = false, length = 12)
-  private String celular;
-
-  @Column(name = "Pagamento", nullable = false)
+  @Column(name = "Pagamento")
   private String pagamento;
 
-  @Column(name = "TotalPrice", nullable = false)
+  @Column(name = "TotalPrice")
   private String totalPrice;
 
-  @Column(name = "DataHora", nullable = false)
+  @Column(name = "DataHora")
   private LocalDateTime dataHora;
 
   public long getId() {
@@ -120,14 +117,6 @@ public class Pedido {
     this.observacoes = observacoes;
   }
 
-  public String getCelular() {
-    return celular;
-  }
-
-  public void setCelular(String celular) {
-    this.celular = celular;
-  }
-
   public String getPagamento() {
     return pagamento;
   }
@@ -151,8 +140,5 @@ public class Pedido {
   public void setDataHora(LocalDateTime dataHora) {
     this.dataHora = dataHora;
   }
-
-  
-
   
 }  
